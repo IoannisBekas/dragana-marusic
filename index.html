@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragana Marusic — A Visual Study</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== SVG FILTERS (distortion) ==================== -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true">
+    <defs>
+      <filter id="distort">
+        <feTurbulence type="turbulence" baseFrequency="0.018" numOctaves="2" seed="3" result="noise"/>
+        <feDisplacementMap id="distort-map" in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ==================== PRELOADER ==================== -->
+  <div class="pre" data-pre>
+    <div class="pre__rows">
+      <div class="pre__row"><span data-pre-line>MMXXVI · A VISUAL STUDY</span></div>
+      <div class="pre__row pre__row--big"><span data-pre-line>DRAGANA MARUSIC</span></div>
+      <div class="pre__row"><span data-pre-line>— PRESENTED IN SIX CHAPTERS —</span></div>
+    </div>
+    <div class="pre__bar"><i data-pre-bar></i></div>
+    <div class="pre__count"><span data-pre-count>00</span> / 100</div>
+  </div>
+
+  <!-- ==================== CURSOR ==================== -->
+  <div class="cursor" data-cursor></div>
+  <div class="cursor cursor--ring" data-cursor-ring></div>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav">
+    <a class="nav__brand" href="#">Dragana&nbsp;Marusic<sup>©</sup>26</a>
+    <nav class="nav__links">
+      <a href="#ch-1">I · Visage</a>
+      <a href="#ch-2">II · Manifesto</a>
+      <a href="#ch-3">III · Series</a>
+      <a href="#ch-5">V · Index</a>
+      <a href="#ch-6">VI · End</a>
+    </nav>
+    <span class="nav__loc">44.81°N / 20.46°E</span>
+  </header>
+
+  <main>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" data-section data-bg="white">
+      <div class="hero__meta hero__meta--tl"><span>EST. 2018</span><span>BEOGRAD</span></div>
+      <div class="hero__meta hero__meta--tr"><span>FILE №</span><span>VS-001</span></div>
+
+      <h1 class="hero__name">
+        <span class="hero__line"><span data-split>Dragana</span></span>
+        <span class="hero__line hero__line--shift"><span data-split>Marusic</span></span>
+      </h1>
+      <div class="hero__sub">
+        <span class="hero__sub-italic" data-fade><em>a visual</em> study</span>
+        <span class="hero__sub-em" data-fade>2018 — 2026</span>
+      </div>
+
+      <div class="hero__foot">
+        <span data-fade>↓ &nbsp; Begin reading</span>
+        <span data-fade>VI Chapters · 47 frames</span>
+      </div>
+    </section>
+
+    <!-- ==================== CHAPTER I MARKER ==================== -->
+    <section class="marker" id="ch-1" data-marker data-bg="black">
+      <div class="marker__top">
+        <span>Chapter</span><span>I / VI</span>
+      </div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>I</span></span>
+        <h2 class="marker__title"><span data-split>Visage</span></h2>
+        <span class="marker__sub" data-fade>Notes on light, on faces, on the tenth of a second</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- CH I — fullscreen portrait -->
+    <section class="frame" data-section data-bg="white">
+      <figure class="frame__media reveal" data-reveal>
+        <img src="https://picsum.photos/id/1062/1600/2000?grayscale" alt="" />
+      </figure>
+      <div class="frame__caption">
+        <span class="mono">Frame 01</span>
+        <h3 class="serif">Portrait, untitled</h3>
+        <p>Silver gelatin, hand-printed.<br/>Beograd, winter 2024.</p>
+      </div>
+    </section>
+
+    <!-- ==================== CHAPTER II MARKER ==================== -->
+    <section class="marker" id="ch-2" data-marker data-bg="black">
+      <div class="marker__top"><span>Chapter</span><span>II / VI</span></div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>II</span></span>
+        <h2 class="marker__title"><span data-split>Manifesto</span></h2>
+        <span class="marker__sub" data-fade>What we believe, in plain words</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- CH II — manifesto -->
+    <section class="manifesto" data-section data-bg="white">
+      <p class="manifesto__text">
+        <span data-words>We work slowly. We chase the unrepeatable second between two breaths — the one nobody asks for, the one that stays. Every frame is a small act of attention. Nothing is staged. Everything is composed.</span>
+      </p>
+      <div class="manifesto__sig">
+        <span class="mono">— signed</span>
+        <em class="serif">Dragana Marusic, atelier</em>
+      </div>
+    </section>
+
+    <!-- ==================== CHAPTER III MARKER ==================== -->
+    <section class="marker" id="ch-3" data-marker data-bg="black">
+      <div class="marker__top"><span>Chapter</span><span>III / VI</span></div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>III</span></span>
+        <h2 class="marker__title"><span data-split>Series</span></h2>
+        <span class="marker__sub" data-fade>Five movements, scrolled sideways</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- CH III — horizontal rail -->
+    <section class="rail" data-section data-bg="white">
+      <div class="rail__track" data-rail-track>
+        <div class="rail__inner" data-rail-inner>
+          <article class="rail__card" style="--img:url('https://picsum.photos/id/103/1000/1300?grayscale')">
+            <span class="mono rail__no">No. I</span>
+            <div class="rail__imgwrap"><img src="https://picsum.photos/id/103/1000/1300?grayscale" alt="" /></div>
+            <h4>Salt</h4><span class="mono">Trieste · 2022</span>
+          </article>
+          <article class="rail__card" style="--img:url('https://picsum.photos/id/119/1000/1300?grayscale')">
+            <span class="mono rail__no">No. II</span>
+            <div class="rail__imgwrap"><img src="https://picsum.photos/id/119/1000/1300?grayscale" alt="" /></div>
+            <h4>Long Hours</h4><span class="mono">Studio · 2023</span>
+          </article>
+          <article class="rail__card" style="--img:url('https://picsum.photos/id/177/1000/1300?grayscale')">
+            <span class="mono rail__no">No. III</span>
+            <div class="rail__imgwrap"><img src="https://picsum.photos/id/177/1000/1300?grayscale" alt="" /></div>
+            <h4>Field Notes</h4><span class="mono">Provence · 2023</span>
+          </article>
+          <article class="rail__card" style="--img:url('https://picsum.photos/id/201/1000/1300?grayscale')">
+            <span class="mono rail__no">No. IV</span>
+            <div class="rail__imgwrap"><img src="https://picsum.photos/id/201/1000/1300?grayscale" alt="" /></div>
+            <h4>Smoke</h4><span class="mono">Berlin · 2024</span>
+          </article>
+          <article class="rail__card" style="--img:url('https://picsum.photos/id/219/1000/1300?grayscale')">
+            <span class="mono rail__no">No. V</span>
+            <div class="rail__imgwrap"><img src="https://picsum.photos/id/219/1000/1300?grayscale" alt="" /></div>
+            <h4>Mirror</h4><span class="mono">Paris · 2025</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CHAPTER IV MARKER ==================== -->
+    <section class="marker" id="ch-4" data-marker data-bg="black">
+      <div class="marker__top"><span>Chapter</span><span>IV / VI</span></div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>IV</span></span>
+        <h2 class="marker__title"><span data-split>Letter</span></h2>
+        <span class="marker__sub" data-fade>Read at your own pace</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- CH IV — essay -->
+    <section class="essay" data-section data-bg="white">
+      <div class="essay__col">
+        <span class="mono essay__date">Beograd · IV · 2026</span>
+        <p class="essay__lede">
+          <span class="dropcap">T</span>here is a kind of attention that begins as patience, then becomes something else — closer to listening than looking. The studio learned this from the long hours, from the silence after a roll of film ends. The camera is not the subject of the work. The subject is the room, the breath, the slow agreement between two people that something true is allowed to happen.
+        </p>
+        <p>
+          We rarely speak during a session. Words narrow the field of what is possible. Instead we move, we wait, we let the light decide. When the picture finds itself, it is rarely the one we expected.
+        </p>
+        <p>
+          What follows in this volume is a small selection from eight years. We have removed our favourites; the favourites are too easy. What remains is harder, slower, and — we hope — more honest.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== CHAPTER V MARKER ==================== -->
+    <section class="marker" id="ch-5" data-marker data-bg="black">
+      <div class="marker__top"><span>Chapter</span><span>V / VI</span></div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>V</span></span>
+        <h2 class="marker__title"><span data-split>Index</span></h2>
+        <span class="marker__sub" data-fade>Hover to look closer</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- CH V — index -->
+    <section class="index" data-section data-bg="white">
+      <ul class="index__list">
+        <li class="index__row" data-hover-img="https://picsum.photos/id/64/700/900?grayscale">
+          <span class="index__num mono">/01</span>
+          <span class="index__title">A Quiet Coast</span>
+          <span class="index__year mono">MMXXII</span>
+        </li>
+        <li class="index__row" data-hover-img="https://picsum.photos/id/91/700/900?grayscale">
+          <span class="index__num mono">/02</span>
+          <span class="index__title">Letters Home</span>
+          <span class="index__year mono">MMXXIII</span>
+        </li>
+        <li class="index__row" data-hover-img="https://picsum.photos/id/177/700/900?grayscale">
+          <span class="index__num mono">/03</span>
+          <span class="index__title">Studio Smoke</span>
+          <span class="index__year mono">MMXXIV</span>
+        </li>
+        <li class="index__row" data-hover-img="https://picsum.photos/id/238/700/900?grayscale">
+          <span class="index__num mono">/04</span>
+          <span class="index__title">Northern Light</span>
+          <span class="index__year mono">MMXXV</span>
+        </li>
+        <li class="index__row" data-hover-img="https://picsum.photos/id/256/700/900?grayscale">
+          <span class="index__num mono">/05</span>
+          <span class="index__title">After the Rain</span>
+          <span class="index__year mono">MMXXVI</span>
+        </li>
+      </ul>
+      <div class="index__preview" data-hover-target><img alt="" /></div>
+    </section>
+
+    <!-- ==================== CHAPTER VI MARKER ==================== -->
+    <section class="marker" id="ch-6" data-marker data-bg="black">
+      <div class="marker__top"><span>Chapter</span><span>VI / VI</span></div>
+      <div class="marker__center">
+        <span class="marker__num"><span data-split>VI</span></span>
+        <h2 class="marker__title"><span data-split>End</span></h2>
+        <span class="marker__sub" data-fade>Where to find us</span>
+      </div>
+      <div class="marker__rule"><i data-rule></i></div>
+    </section>
+
+    <!-- END -->
+    <section class="end" data-section data-bg="white">
+      <h2 class="end__title">
+        <span class="end__line"><span data-split>WORK</span></span>
+        <span class="end__line end__line--it"><span data-split><em>with us</em></span></span>
+      </h2>
+      <a class="end__mail" href="mailto:hello@draganamarusic.studio">hello@draganamarusic.studio</a>
+      <div class="end__grid">
+        <div><span class="mono">Studio</span><p>Knez Mihailova 32<br/>11000 Beograd</p></div>
+        <div><span class="mono">Press</span><p>press@draganamarusic.studio<br/>+381 11 000 000</p></div>
+        <div><span class="mono">Social</span><p>Instagram · Are.na<br/>Vimeo · LinkedIn</p></div>
+      </div>
+      <div class="end__row">
+        <span class="mono">© Dragana Marusic · MMXXVI</span>
+        <span class="mono">Built in Beograd</span>
+        <a class="mono" href="#" data-top>↑ Return to start</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Chapter sweep overlay (used by JS for full-page transitions on link clicks) -->
+  <div class="sweep" data-sweep></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
