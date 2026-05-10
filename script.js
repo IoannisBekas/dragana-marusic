@@ -49,9 +49,14 @@
 
   /* ---------- Hero name reveal ---------- */
   function animateHero(){
-    const heroSplit = document.querySelector('.hero__name [data-split]');
-    if (heroSplit){
-      gsap.to(heroSplit, { y: '0%', duration: 1.4, ease: 'expo.out' });
+    const heroSplits = document.querySelectorAll('.hero__name [data-split]');
+    if (heroSplits.length){
+      gsap.to(heroSplits, {
+        y: '0%',
+        duration: 1.4,
+        ease: 'expo.out',
+        stagger: 0.12,
+      });
     }
   }
 
@@ -271,7 +276,7 @@
       ScrollTrigger.create({
         trigger: m,
         start: 'top top',
-        end: '+=70%',
+        end: '+=45%',
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
