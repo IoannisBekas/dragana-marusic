@@ -451,16 +451,22 @@ a{ color:inherit; text-decoration:none; }
 .index__list .index__row:hover{ opacity: 1; padding-left: 22px; color: var(--accent); }
 .index__preview{
   position: fixed;
-  top: 0; left: 0;
-  width: 280px; height: 360px;
+  top: 0; left: auto;
+  right: clamp(40px, 8vw, 120px);
+  width: clamp(300px, 30vw, 460px);
+  aspect-ratio: 4 / 5;
   pointer-events: none;
   z-index: 60;
-  opacity: 0;
-  transition: opacity .25s;
   overflow: hidden;
+  will-change: transform, clip-path;
+  clip-path: inset(100% 0 0 0);
+  opacity: 0;
 }
-.index__preview img{ width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05); }
-.index__preview.is-on{ opacity: 1; }
+.index__preview img{
+  width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1.05);
+  will-change: transform;
+}
 @media (max-width: 800px){ .index__preview{ display: none; } }
 
 /* ------------------ END / FOOT ------------------ */

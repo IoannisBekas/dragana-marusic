@@ -179,26 +179,86 @@
     const target = document.querySelector('[data-hover-target]');
     if (!target) return;
     const img = target.querySelector('img');
-    let mx=0,my=0,tx=0,ty=0,active=false;
 
-    window.addEventListener('mousemove', e => { mx = e.clientX + 28; my = e.clientY - 180; });
+    let my = 0, ty = 0;
+    let currentSrc = '';
+    let isOn = false;
+    let leaveTimer = null;
+
+    // Preload all preview images so swaps are instant
+    document.querySelectorAll('[data-hover-img]').forEach(row => {
+      const url = row.dataset.hoverImg;
+      if (url){ const i = new Image(); i.src = url; }
+    });
+
+    gsap.set(target, { clipPath: 'inset(100% 0 0 0)', autoAlpha: 0 });
+
+    window.addEventListener('mousemove', e => { my = e.clientY; });
+
+    function reveal(newSrc){
+      img.src = newSrc;
+      currentSrc = newSrc;
+      gsap.killTweensOf([target, img]);
+      gsap.set(target, { autoAlpha: 1 });
+      gsap.fromTo(target,
+        { clipPath: 'inset(100% 0 0 0)' },
+        { clipPath: 'inset(0% 0 0 0)', duration: 0.85, ease: 'expo.out' }
+      );
+      gsap.fromTo(img,
+        { scale: 1.14 },
+        { scale: 1, duration: 1.6, ease: 'expo.out' }
+      );
+    }
+
+    function show(newSrc){
+      if (newSrc === currentSrc && isOn) return;
+      isOn = true;
+
+      if (currentSrc && currentSrc !== newSrc){
+        // Crossfade — wipe down to top, swap source, wipe up from bottom
+        gsap.killTweensOf(target);
+        gsap.to(target, {
+          clipPath: 'inset(0 0 100% 0)',
+          duration: 0.4,
+          ease: 'expo.in',
+          onComplete: () => reveal(newSrc),
+        });
+      } else {
+        reveal(newSrc);
+      }
+    }
+
+    function hide(){
+      isOn = false;
+      gsap.killTweensOf(target);
+      gsap.to(target, {
+        clipPath: 'inset(0 0 100% 0)',
+        duration: 0.55,
+        ease: 'expo.in',
+        onComplete(){
+          gsap.set(target, { autoAlpha: 0, clipPath: 'inset(100% 0 0 0)' });
+          currentSrc = '';
+        }
+      });
+    }
 
     document.querySelectorAll('[data-hover-img]').forEach(row => {
       row.addEventListener('mouseenter', () => {
-        img.src = row.dataset.hoverImg;
-        target.classList.add('is-on');
-        active = true;
+        if (leaveTimer){ clearTimeout(leaveTimer); leaveTimer = null; }
+        show(row.dataset.hoverImg);
       });
       row.addEventListener('mouseleave', () => {
-        target.classList.remove('is-on');
-        active = false;
+        // small grace period to allow row→row transitions without flicker
+        leaveTimer = setTimeout(() => { hide(); leaveTimer = null; }, 40);
       });
     });
 
+    // Vertical follow only — X is anchored by CSS to the right side
     function loop(){
-      tx += (mx - tx) * 0.18;
       ty += (my - ty) * 0.18;
-      if (active) target.style.transform = `translate(${tx}px, ${ty}px)`;
+      const h = target.offsetHeight || 1;
+      const y = Math.max(24, Math.min(window.innerHeight - h - 24, ty - h / 2));
+      target.style.transform = `translate3d(0, ${y}px, 0)`;
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
